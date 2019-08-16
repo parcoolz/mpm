@@ -1,0 +1,21 @@
+ss
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Ad Movie Name</td>
+        <td>Ad Movie Summary</td>
+        <td>Ad Movie Image</td>
+        <td colspan="2">Actions</td>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let movieunit of movieunits">
+            <td>{{ <movieunit class="unit_name"></movieunit> }}</td>
+            <td>{{ <movieunit class="unit_summary"></movieunit> }}</td>
+            <td>{{ <movieunit class="unit_image"></movieunit> }}</td>
+             <td><a [routerLink]="['/edit', movieunit._id]" class="btn btn-primary">Edit</a></td>
+            <td><a [routerLink]="" class="btn btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+  </table>

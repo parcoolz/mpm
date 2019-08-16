@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Movie Name</label>
+          <input type="text" class="form-control" name="movie_name" formControlName="movie_name" #movie_name [(ngModel)] = "movieunit.movie_name"/>
+        </div>
+        <div *ngIf="angForm.controls['movie_name'].invalid && (angForm.controls['movie_name'].dirty || angForm.controls['movie_name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['movie_name'].errors.required">
+            Movie Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Movie Image</label>
+            <input type="text" class="form-control" name="movie_image" formControlName="movie_image" #movie_image [(ngModel)] = "movieunit.movie_image"/>
+          </div>
+          <div *ngIf="angForm.controls['movie_image'].invalid && (angForm.controls['movie_image'].dirty || angForm.controls['movie_image'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['movie_image'].errors.required">
+              Movie Image is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4">Movie Summary</label>
+            <input type="text" class="form-control" name="movie_summary" formControlName="movie_summary" #movie_summary [(ngModel)] = "movieunit.movie_summary"/>
+          </div>
+          <div *ngIf="angForm.controls['movie_summary'].invalid && (angForm.controls['movie_summary'].dirty || angForm.controls['movie_summary'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['movie_summary'].errors.required">
+              Movie Summary is required.
+            </div>
+          </div>
+        <div class="form-group">
+          <button (click)="updateMovieUnit(movie_name.value, movie_image.value,movie_summary.value)" [disabled]="angForm.invalid" class="btn btn-primary">Update Movie</button>
+        </div>
+      </form>
+    </div>
+  </div>
