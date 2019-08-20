@@ -18,7 +18,7 @@ export class MovieUnitService {
       movie_image:movie_image
     };
     this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+        .subscribe(_res => console.log('Done'));
   }
   getMovieUnits() {
     return this

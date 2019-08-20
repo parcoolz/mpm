@@ -9,7 +9,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { AdunitService } from './adunit.service';
+import { MovieUnitService } from './movieunit.service';
 
 const routes: Routes = [
   {
@@ -40,7 +40,7 @@ const routes: Routes = [
     SlimLoadingBarModule,
     HttpClientModule
   ],
-  providers: [AdunitService],
+  providers: [MovieUnitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
